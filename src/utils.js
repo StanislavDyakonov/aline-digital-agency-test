@@ -24,7 +24,6 @@ export const toFraction = (dec) => {
       done = true
     }
   }
-  if(num === 0) den = 0
   return [num, den]
 }
 
