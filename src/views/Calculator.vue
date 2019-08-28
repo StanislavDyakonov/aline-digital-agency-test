@@ -100,8 +100,8 @@
 
         const handler = (acc, item) => {
           if (acc.prev && acc.prev.type === TYPE_OPERATOR)
-            acc.decimal = calc[acc.prev.value] && calc[acc.prev.value](acc.decimal, item.value) || NaN
-          else if (!acc.decimal)
+            acc.decimal = calc[acc.prev.value] && calc[acc.prev.value](acc.decimal, item.value) ?? NaN
+          else if (acc.decimal === null)
             acc.decimal = item.value
 
           acc.prev = item
